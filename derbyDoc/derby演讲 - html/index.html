@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; text-indent: 36.1px; font: 12.0px 'Songti SC'}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-indent: 36.1px; font: 12.0px 'Songti SC'; -webkit-text-stroke: #000000}
+    span.s1 {font: 12.0px Georgia}
+    span.s2 {font: 12.0px Times; font-kerning: none; -webkit-text-stroke: 0px #000000}
+    span.s3 {-webkit-text-stroke: 0px #000000}
+
+    @media only screen and (min-width: 600px) { body { width:600px; margin: auto; } }
+  </style>
+</head>
+<body>
+<p class="p1">我是来自<span class="s1">t125</span>的学员张锋源，在学习的过程中接触了apache <span class="s1">derby</span>，下面我为大家介绍derby，希望从中可以了解derby，首先，我们需要知道的是，什么是derby？ derby 是一个纯java开发的嵌入式数据库，最早来源于一个叫cloudscape的公司在1996年开发出来的，之后被数据库厂商informix收购，在2001年被ibm收购，ibm利用cloudscape数据库运用在旗下产品中，其中最著名的是<span class="s2">Cognos8</span><span class="s3">，他是一个，用于商业智能和绩效管理的软件，其中的数据库就是运用derby，并沿用至今，在维护了一段时间后，ibm将cloudscape 50w行代码重构后将其送给了apache基金会，并正式改名为apache derby，在2005年，derby正式面向大众，虽然在大众面前他是一个新鲜玩意，但derby已经开发了10年之久，这也说明他在当时的商业价值和性能强大</span></p>
+<p class="p2">在2005年8月3号，derby发行了第一个版本10.1.1.0，包含了库文件，源码以及系统文件，并提供了一个为derby服务的框架，软件提供了jdk/jdbc和sql支持，并支持在网络服务器中使用xa协议,这说明了derby是基于sql的关系型语言构成的，你可以使用sql去完成derby操作，并在应用程序中通过jdbc去连接derby数据库，十分的方便，并且derby本身为用户提供了一系列工具去工作，你可以利用derby下的ij去创建并使用数据库，也可以使用sysinfo去查看自己的系统信息，derby也为用户提供了方便的服务器开启接口networkservercontrol直接开启服务器，</p>
+<p class="p2">或者利用ide去连接开发，为用户提供了多选择性以应对各种开发环境。</p>
+<p class="p2">从10.1.1.0到现在的10.13.1.1版本中，derby为了适应当今的环境也做出了改变，从当初支持的jdbc2-3到现在支持jdbc4.2最新版本，在jdk方面也从支持1.3，1.4,1.5到最新的java8，可见derby可以应对当今的数据库服务，我们只需要去应用在自己的应用程序即可使用，derby是免费开源的，用户可以轻而易举的获取并使用，通过去derby官网去获取最新版本，通过bin压缩文件去部署系统环境即可在cmd中使用，如果你需要在自己的应用程序中使用开发，可以去下载lib库文件，通过产生依赖关系即可，如果对关系型数据库感兴趣的同学可以去下载src获取软件源码或者利用svn直接获取链接地址下载即可获取源码结构，derby也支持在linux中开发并使用，我们也推荐同学去获取源码并进行研究，在derby源码具有清晰明了的代码结构值得去学习，踩在巨人的肩膀上学习可以让自己变成巨人让别人踩～</p>
+<p class="p2">在前面我给大家介绍了derby是一个关系型数据库软件，你可以通过ide或者ij derby自带的sql工具进行开发使用，下面我给大家介绍一下derby具体的工作流程，作为嵌入式软件，他最大的 优势在于可依附在任何jvm环境下的应用程序，通过jdbc接口去实现调用，但需要注意的是，在主机中只允许一个数据库存在，当第一个正在启动的数据库启动时将不允许连接第二个数据库，你需要去关闭第一个即可，</p>
+<p class="p2">derby是具有c/s架构的服务器，在jvm环境下，利用应用程序连接jdbc接口唤醒驱动去连接服务器框架，在源码中，通过networkcontrol应用程序的main类去开启服务，通过start去开启服务器，值得我们注意的是，derby源码中需要经过一个系统管理服务去验证政策文件的合法性和匹配derby类路径，在derby中包含了以下jar包， 他们存在与jar文件夹中，如果你想要直接使用需要去系统变量去部署该系列文件，derby需要一个系统文件产生依赖关系，你可以通过ant插件去实现，在这里我们推荐使用netbean去完成以下操作，netbean会自动为该应用程序去构建依赖关系。</p>
+<p class="p2">当然，我们熟悉的derby也可以使用在web server上，这个一个令人惊喜的信息呀，老伙计，他的操作类似于oracle和sql server，在之前我们在刚开始学习的oracle时,一系列的部署和配置肯定令大家头痛不已吧，但在derby中你并不需要这些操作，你只需要在web服务器中通过servlet.jsps/ejbs去使用即可，很方便吧，在源码中，derby也有对应的servlet结构，我们可以在drda文件夹中的netservletjava文件中清楚的看见。</p>
+<p class="p2">在整体介绍了derby后，我们可以认识到derby的强大和便捷，他为ibm服务后变成开源软件，其中的价值深不可测，我们需要的只是利用其中的精华并修改利用在自己的应用程序中也给大家的学习和认知得到了一定的发展，同学们，开源具有的共享和传播需要每一位程序员所具备，共同学习共同发展，使文明进一步的前进，但首先我们作为程序猿需要去深入研究并从中使用到业务中，而不是单纯的crud。时代在召唤，我们在前进，加入开源吧。</p>
+</body>
+</html>
