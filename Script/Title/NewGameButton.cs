@@ -25,6 +25,7 @@ public class NewGameButton : MonoBehaviour {
 		if(buttonSfx != null)
 			AudioSource.PlayClipAtPoint(buttonSfx,transform.position);
 		
+		
 		this.GetComponent<GUITexture>().texture = buttonDown;
 	}
 		

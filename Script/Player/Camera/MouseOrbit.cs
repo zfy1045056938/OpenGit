@@ -78,7 +78,7 @@ public class MouseOrbit : MonoBehaviour {
 		} 
  
  
- 
+ JumpGameButton
 	    if (target && isActivated) { 
 			
 		  y -= Input.GetAxis("Mouse Y") * ySpeed;
