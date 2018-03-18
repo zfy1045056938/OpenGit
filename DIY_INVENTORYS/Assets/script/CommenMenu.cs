@@ -11,8 +11,8 @@ public class CommenMenu : MonoBehaviour {
     //Button config
     [System.Serializable]
     public class ButtonSetting{
-        public vector2 position;
-        public vector2 size;
+		public Vector2 position;
+        public Vector2 size;
         public GUIStyle buttonStyle;
     }
 
@@ -24,8 +24,8 @@ public class CommenMenu : MonoBehaviour {
 
 void OnGUI(){
 
-    ResizeGUImatrix();
-    //when click button inventory
+		ResizeGUImatrix();
+		//when click button inventory
 		if(GUI.Button(new Rect(bag.position.x,bag.position.y,bag.size.x,bag.size.y),"",bag.buttonStlye))
 		{
 			GUI_Menu.instance.OpenShortcutMenu("Inventory");
@@ -38,7 +38,7 @@ void ResizeGUImatrix(){
     //Set Matrix
     Vector2 radio = new Vector2(Screen.width/defaulctScreens.x,Screen.height/defaulctScreens.y);
     Matrix4x4 guiMatrix = Matrix4x4.identify;
-    guiMatrix.SetTRS(new Vector3(1,1,1),Quate)
+		guiMatrix.SetTRS (new Vector3 (1, 1, 1), Quaternion);
 }
 
 }
